@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Travel.Models.Review>
+
+@{
+    ViewBag.Title = "ReviewDetailsList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Review List</h2>
+
+@if (!Model.Any())
+{
+    <p>We don't have any reviews yet.</p>
+}
+else
+{
+    <table id="review" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Review</th>
+                <th>Relevance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(review.nameReview, "DetailsReview", "Review", new { id = review.idReview }, null)</td>
+                    <td>@review.relevanceReview</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    .mySlides {
+        display: none;
+    }
+</style>
+<body>
+
+    <h2 class="w3-center">Review Locations</h2>
+
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="~/Images/reviewImages/review1.jpg"  style="width:100%">
+        <img class="mySlides" src="~/Images/reviewImages/review2.jpg" style="width:100%">
+        <img class="mySlides" src="~/Images/reviewImages/review3.jpg" style="width:100%">
+        <img class="mySlides" src="~/Images/reviewImages/review4.jpg" style="width:100%">
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#review").DataTable();
+
+
+
+            $("#review").on("click", ".js-delete", function () {
+                var button = $(this);
+
+
+            });
+        });
+    </script>
+}

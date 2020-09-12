@@ -1,0 +1,55 @@
+﻿@model Travel.Models.User
+
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New User</h2>
+
+@using (Html.BeginForm("Create", "User"))
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(m => m.firstNameUser)
+        @Html.TextBoxFor(m => m.firstNameUser, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.firstNameUser)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.lastNameUser)
+        @Html.TextBoxFor(m => m.lastNameUser, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.lastNameUser)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.phoneUser)
+        @Html.TextBoxFor(m => m.phoneUser, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.emailAddressUser)
+        @Html.TextBoxFor(m => m.emailAddressUser, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.userNameUser)
+        @Html.TextBoxFor(m => m.userNameUser, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.userNameUser)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.passwordUser)
+        @Html.TextBoxFor(m => m.passwordUser, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.passwordUser)
+    </div>
+    @Html.HiddenFor(m => m.idUser)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

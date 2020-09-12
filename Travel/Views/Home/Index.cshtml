@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+    <section>
+        <img class="mySlides" src="~/Images/image1.jpg"
+             style="width:100%">
+        <img class="mySlides" src="~/Images/image2.jpg"
+             style="width:100%">
+        <img class="mySlides" src="~/Images/image3.jpg"
+             style="width:100%">
+    </section>
+
+    <center>
+        <section class="w3-container w3-center w3-content" style="max-width:600px">
+            <h2 class="w3-wide">ONLINE TRAVEL</h2>
+            <p class="w3-opacity"><i>We love to travel</i></p>
+            <p class="w3-justify">
+                Places of natural beauty such as beaches, tropical island resorts, national parks, mountains, deserts and forests, are examples of traditional tourist attractions which people may visit. Cultural tourist attractions can include historical places, monuments, ancient temples, zoos, aquaria, museums and art galleries, botanical gardens, buildings and structures (such as forts, castles, libraries, former prisons, skyscrapers, bridges), theme parks and carnivals, living history museums, public art (sculptures, statues, murals), signs[clarification needed], ethnic enclave communities, historic trains and cultural events. Factory tours, industrial heritage, creative art and crafts workshops are the object of cultural niches like industrial tourism and creative tourism. Many tourist attractions are also landmarks.
+
+                Tourist attractions are also created to capitalise on legends such as a supposed UFO crash site near Roswell, New Mexico and the alleged Loch Ness monster sightings in Scotland. Ghost sightings also make tourist attractions.
+
+                Ethnic communities may become tourist attractions, such as Chinatowns in the United States and the black British neighbourhood of Brixton in London, England.
+
+                In the United States, owners and marketers of attractions advertise tourist attractions on billboards along the sides of highways and roadways, especially in remote areas. Tourist attractions often distribute free promotional brochures to be displayed in rest areas, information centers, fast food restaurants, and motel rooms or lobbies.
+
+                While some tourist attractions provide visitors a memorable experience for a reasonable admission charge or even for free, others may be of low quality and overprice their goods and services (such as admission, food, and souvenirs) in order to profit excessively from tourists. Such places are commonly known as tourist traps.
+
+                Within cities, rides on boats and sightseeing buses are sometimes popular.
+            </p>
+        </section>
+    </center>
+
+    <script>
+        // Automatic Slideshow - change image every 3 seconds
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000);
+        }
+    </script>
+
+</body>
+</html>

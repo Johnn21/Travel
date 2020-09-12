@@ -1,0 +1,29 @@
+﻿
+
+@model Travel.ViewModels.RandomReviewViewModel
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    var className = Model.Reviewers.Count > 5 ? "popular" : null; 
+}
+
+<h2 class="@className">@Model.Review.nameReview</h2>
+
+@if (Model.Reviewers.Count == 0)
+{
+    <text>No one has made a review before.</text>
+}
+else
+{
+<ul>
+
+    @foreach (var reviewer in Model.Reviewers)
+    {
+        <li>@reviewer.userNameReviewer </li>
+    }
+
+</ul> 
+}

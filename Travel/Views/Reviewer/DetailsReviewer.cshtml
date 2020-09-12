@@ -1,0 +1,18 @@
+﻿@model Travel.Models.Reviewer
+@{
+    ViewBag.Title = Model.userNameReviewer;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<h2>@Model.userNameReviewer</h2>
+<h2>@Model.emailAddressReviewer</h2>*@
+    <center>
+        <div class="form-group">
+            @Html.LabelFor(m => m.userNameReviewer)
+            @Html.TextBoxFor(m => m.userNameReviewer, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.emailAddressReviewer)
+            @Html.TextBoxFor(m => m.emailAddressReviewer, new { @class = "form-control" })
+        </div>
+    </center>

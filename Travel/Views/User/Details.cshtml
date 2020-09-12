@@ -1,0 +1,38 @@
+﻿
+@model Travel.Models.User
+@{
+    ViewBag.Title = Model.firstNameUser;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@**h2>@Model.firstNameUser</h2>
+<h2>@Model.lastNameUser</h2>
+<h2>@Model.phoneUser</h2>
+<h2>@Model.emailAddressUser</h2>
+<h2>@Model.userNameUser</h2>
+<h2>@Model.passwordUser</h2>*@
+    <center>
+        <div class="form-group">
+            @Html.LabelFor(m => m.firstNameUser)
+            @Html.TextBoxFor(m => m.firstNameUser, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.lastNameUser)
+            @Html.TextBoxFor(m => m.lastNameUser, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.phoneUser)
+            @Html.TextBoxFor(m => m.phoneUser, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.emailAddressUser)
+            @Html.TextBoxFor(m => m.emailAddressUser, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.userNameUser)
+            @Html.TextBoxFor(m => m.userNameUser, new { @class = "form-control" })
+        </div>
+    </center>

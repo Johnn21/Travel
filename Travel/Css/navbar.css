@@ -1,0 +1,38 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans|Nova+Mono');
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1" >
+<style >
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color:#F1EEDB;
+    font-size: 17px;
+    background-color: #282B24
+}
+
+.nv {
+    position: relative;
+    max-width: 7000px;
+    margin: 0 auto;
+    background-color:gray;
+}
+
+    .container img {
+        vertical-align: middle;
+    }
+
+    .container .content {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+    }
+

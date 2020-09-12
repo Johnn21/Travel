@@ -1,0 +1,22 @@
+﻿<link href="@Url.Content("~/Css/navbar.css")" rel="stylesheet" type="text/css" />
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="header">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("OnlineTravel", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Travels", "Index", "Travel")</li>
+                <li>@Html.ActionLink("Reviews", "Index", "Review")</li>
+                <li>@Html.ActionLink("Reviewers", "Index", "Reviewer")</li>
+                <li>@Html.ActionLink("Users", "Index", "User")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>

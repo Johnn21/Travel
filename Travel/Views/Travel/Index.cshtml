@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Travel.Models.Travels>
+
+@{
+    ViewBag.Title = "Travel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Travel</h2>
+@if (!Model.Any())
+{
+    <p>We don't have any travels yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Travel</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var travel in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(travel.locationTravel, "TravelReview", "Travel", new { id = travel.idTravel }, null)</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

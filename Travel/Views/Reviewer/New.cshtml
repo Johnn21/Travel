@@ -1,0 +1,38 @@
+﻿@model Travel.Models.Reviewer
+
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Reviewer</h2>
+
+@using (Html.BeginForm("Create", "Reviewer"))
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(m => m.userNameReviewer)
+        @Html.TextBoxFor(m => m.userNameReviewer, new { @class = "form-control" })
+      @*  @Html.ValidationMessageFor(m => m.userNameReviewer)*@
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.passwordReviewer)
+        @Html.TextBoxFor(m => m.passwordReviewer, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.passwordReviewer)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.emailAddressReviewer)
+        @Html.TextBoxFor(m => m.emailAddressReviewer, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.reviewerId)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

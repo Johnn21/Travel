@@ -1,0 +1,30 @@
+﻿@model Travel.Models.Review
+@{
+    ViewBag.Title = Model.nameReview;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<h2>@Model.nameReview</h2>
+<h2>@Model.locationReview</h2>
+<h2>@Model.overallRating</h2>*@
+
+    <center>
+        <div class="form-group">
+            @Html.LabelFor(m => m.nameReview)
+            @Html.TextBoxFor(m => m.nameReview, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.locationReview)
+            @Html.TextBoxFor(m => m.locationReview, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.overallRating)
+            @Html.TextBoxFor(m => m.overallRating, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.descriptionReview)
+            @Html.TextBoxFor(m => m.descriptionReview, new { @class = "form-control" })
+        </div>
+    </center>

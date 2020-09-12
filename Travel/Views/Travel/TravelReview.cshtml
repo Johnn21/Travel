@@ -1,0 +1,38 @@
+﻿@model Travel.ViewModels.TravelReviewModel
+
+@{
+    ViewBag.Title = "TravelReview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Travel.locationTravel</h2>
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Review</th>
+            <th>Relevance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var review in Model.Reviews)
+        {
+            if (review.locationReview == Model.Travel.locationTravel)
+            {
+                <tr>
+                    <td>@Html.ActionLink(review.nameReview, "DetailsReview", "Review", new { id = review.idReview }, null)</td>
+                    <td>@review.relevanceReview</td>
+                </tr>
+            }
+            else
+            {
+                <li>There is no review for that location!</li>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+
